@@ -8,6 +8,7 @@ const bookSchema = new mongoose.Schema(
     image: String,
     price: Number,
     userId: String,
+    createdAt: { type: Date, default: Date.now },
   },
   {
     timestamps: true,

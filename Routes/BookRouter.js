@@ -1,14 +1,16 @@
 const express = require("express");
 const { Authentication } = require("../middleware/Authentication");
-const { myBooks, addBook, allBooks } = require("../Controllers/book");
+const { myBooks, addBook, allBooks, findBookByTime, } = require("../Controllers/book");
 
 const BookRouter = express.Router();
 
-BookRouter.get("/book", Authentication, myBooks);
+BookRouter.get("/books", Authentication, myBooks);
 
-BookRouter.post("/book", Authentication, addBook);
+BookRouter.post("/books", Authentication, addBook);
 
-BookRouter.get("/allbook", allBooks);
+BookRouter.get("/allbooks", allBooks);
+
+BookRouter.get("/booksbytime", findBookByTime);
 
 module.exports = {
   BookRouter,
