@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+  res.send("WELCOME TO THE BOOK LIBRARY")
+})
+
 app.use(AuthRouter);
 
 app.use(BookRouter);
